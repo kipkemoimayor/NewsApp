@@ -4,4 +4,4 @@ class Config:
 class ProdConfig:
     pass
 class DevConfig:
-    pass
+    debug=True
