@@ -7,7 +7,8 @@ class Config:
 class ProdConfig(Config):
     pass
 class DevConfig(Config):
-    debug=True
+    DEBUG=True
+
 config_options={
 "development":DevConfig,
 "production":ProdConfig
