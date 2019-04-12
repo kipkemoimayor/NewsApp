@@ -1,9 +1,33 @@
 {% extends "base.html" %}
 {%import 'macros.html' as macro%}
 {% block content %}
-<div class="jumbotron">
-  <h1>LOve and hate</h1>
-  <h1>Hello world Welcome to my news</h1>
+{%block script%}
+<script type="text/javascript" src="{{ url_for('static', filename='javascript/jquery-3.3.1.min.js')}}"></script>
+<script src="{{ url_for('static', filename='javascript/popper.min.js')}}"></script>
+<script src="{{ url_for('static', filename='javascript/bootstrap.js')}}"></script>
+<script src="{{ url_for('static', filename='javascript/mdb.js')}}"></script>
+<script src="{{ url_for('static', filename='javascript/bootstrap-material-design.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='javascript/main.js')}}"></script>
+{%endblock%}
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1>LOve and hate</h1>
+    <h1>Hello world Welcome to my news</h1>
+    <button id="hello" class="btn btn-outline-success" type="button" name="button">Get news</button>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="">News section</h1>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 </div>
-<button class="btn btn-outline-success" type="button" name="button">Mdb</button>
+
 {%endblock%}
