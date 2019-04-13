@@ -6,7 +6,7 @@ h1{
   color: white
 }
 #head{
-  background-image: url("../images/news.png");
+  background-image: url("../images/cover.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -18,5 +18,5 @@ h1{
 }
 .overlay{
   height: 50vh;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.5);
 }
