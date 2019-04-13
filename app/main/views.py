@@ -6,3 +6,7 @@ def index():
     top_news=news("top-headlines")
     print(top_news)
     return render_template("index.html",top_headline=top_news)
+
+@main.route("/news/<title>")
+def body(title):
+    return render_template("body.html")

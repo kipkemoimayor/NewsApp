@@ -28,9 +28,28 @@ def process_results(news_list):
         title=news.get("title")
         description=news.get("description")
         urltoImage=news.get("urlToImage")
+        content=news.get("content")
+        url=news.get("url")
 
-        news_object=News(title,description,urltoImage)
+        news_object=News(title,description,urltoImage,content,url)
 
         news_results.append(news_object)
         news_results=news_results[:6]
     return news_results
+
+def get_news(id):
+    get_news_details_url=base_url.format(id,api_key)
+
+    with urllib.request.urlopen(get_news_details_url) as url:
+        news_details_data=url.read();
+        news_details_response=json.loads(news_details_data)
+
+        news_object=None
+        if news_details_response:
+            title=news_details_response.get("title")
+            description=news_details_response.get("description")
+            urltoImage=news_details_response.get("urlToImage")
+            content=news_details_response.get("content")
+
+            news_object=News(title,description,urltoImage,content)
+    return news_object
