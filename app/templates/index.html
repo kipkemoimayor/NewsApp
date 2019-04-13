@@ -26,6 +26,21 @@
       </div>
 
     </div>
+    <div class="col-md-6">
+      <h3>Top Headlines</h3>
+      <div class="card">
+        <div class="card-body">
+          <ul>
+            {%for top_news in  top_headline%}
+            <li>{{top_news.title}}</li>
+            {%endfor%}
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
 </div>

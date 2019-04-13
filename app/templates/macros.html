@@ -1,1 +1,5 @@
-
+{%macro  displayTonews(news_list)%}
+{% for topnews in news_list%}
+    <li>{{topnews.title}}</li>
+    {%endfor%}
+{%endmacro%}

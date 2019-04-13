@@ -1,5 +1,5 @@
 class News:
-    def __init__(self,title,description,image):
-        self.author=title
-        self.article=description
-        self.feeds=image
+    def __init__(self,title,description,urlToImage):
+        self.title=title
+        self.description=description
+        self.urlToImage=urlToImage
