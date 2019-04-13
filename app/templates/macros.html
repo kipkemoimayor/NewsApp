@@ -1,5 +1,5 @@
 {%macro  displayTonews(news_list)%}
-{% for topnews in news_list%}
-    <li>{{topnews.title}}</li>
+{% for top_news in news_list%}
+    <li class="list-group-item">{{top_news.title}}</li>
     {%endfor%}
 {%endmacro%}
