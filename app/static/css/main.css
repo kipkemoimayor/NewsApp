@@ -20,3 +20,11 @@ h1{
   height: 50vh;
   background-color: rgba(0,0,0,0.5);
 }
+img{
+  height: 350px;
+}
+h2{
+  text-align: center;
+  text-transform: capitalize;
+  color: #437C7B;
+}
