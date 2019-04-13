@@ -2,4 +2,21 @@ h1{
   text-align: center;
   color: #9876;
   text-transform: capitalize;
+  font-weight: 400;
+  color: white
+}
+#head{
+  background-image: url("../images/news.png");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  height: 50vh;
+}
+.overlay{
+  height: 50vh;
+  background-color: rgba(0,0,0,0.6);
 }
