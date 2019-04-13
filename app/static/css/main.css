@@ -28,3 +28,9 @@ h2{
   text-transform: capitalize;
   color: #437C7B;
 }
+#title{
+  background-color: #437C7B;
+}
+#title:hover{
+  background-color: #9873;
+}

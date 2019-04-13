@@ -6,9 +6,9 @@
 {% for top_news in news_list%}
   <div class="col-md-4">
     <div class="card">
-      <!-- <div class="card-title">
-          {{top_news.title}}
-      </div> -->
+      <div id="title" class="card-title">
+          {{top_news.source}}
+      </div>
       <img src="{{top_news.urlToImage}}" alt="" class="img-responsive">
       <div class="card-body">
           {{top_news.description |truncate(100) }} <br><a class="btn btn-outline-info" href="#">Continue R..</a>

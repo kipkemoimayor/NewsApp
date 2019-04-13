@@ -1,5 +1,7 @@
 $(document).ready(function(){
-  $("#hello").click(function(){
-    alert("hello mdb")
+  $("#sources").click(function(){
+    $("html,body").animate({scrollTop:$(document).height()},2000);
+    return false;
+
   })
 })
