@@ -11,7 +11,7 @@ def index():
 @main.route("/articles/<name>")
 def body(name):
     article=get_sources(name)
-    bbc=get_articles("bbc-news")
+    bbc=get_articles("abc-news")
     abc=get_articles("abc-news-au")
     aljezera=get_articles("al-jazeera-english")
     technica=get_articles("ars-technica")
