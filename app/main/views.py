@@ -10,10 +10,9 @@ def index():
 
 @main.route("/articles/<name>")
 def body(name):
-    article=get_sources(name)
     bbc=get_articles("abc-news")
     abc=get_articles("abc-news-au")
     aljezera=get_articles("al-jazeera-english")
     technica=get_articles("ars-technica")
 
-    return render_template("articles.html",name=name,bbc_news=bbc,article=article,abc_news=abc,aljezera_n=aljezera,tech=technica)
+    return render_template("articles.html",name=name,bbc_news=bbc,abc_news=abc,aljezera_n=aljezera,tech=technica)

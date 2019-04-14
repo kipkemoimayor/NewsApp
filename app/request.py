@@ -92,11 +92,11 @@ def process_articles(article_list):
     for article in article_list:
         title=article.get("title")
         description=article.get("description")
-        url=article.get("url")
         urlToImage=article.get("urlToImage")
+        url=article.get("url")
         publishedAt=article.get("publishedAt")
 
-        article_object=Articles(title,description,urlToImage,publishedAt,url)
+        article_object=Articles(title,description,urlToImage,url,publishedAt)
         article_results.append(article_object)
 
     return article_results
@@ -112,9 +112,9 @@ def get_sources(name):
         if news_details_response:
             title=news_details_response.get("title")
             description=news_details_response.get("description")
-            url=news_details_response.get("url")
             urlToImage=news_details_response.get("urlToImage")
+            url=news_details_response.get("url")
             publishedAt=news_details_response.get("publishedAt")
 
-            news_object=Articles(title,description,urlToImage,publishedAt,url)
+            news_object=Articles(title,description,url,urlToImage,publishedAt)
     return news_object

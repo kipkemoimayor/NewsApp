@@ -15,7 +15,7 @@ class Articles:
     def __init__(self,title,description,url,urlToImage,publishedAt):
         self.title=title
         self.description=description
-        self.urlToImage=urlToImage
         self.url=url
+        self.urlToImage=urlToImage
         self.publishedAt=publishedAt
 #modl10newuser58
