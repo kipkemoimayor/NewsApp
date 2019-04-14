@@ -18,3 +18,4 @@ class Articles:
         self.urlToImage=urlToImage
         self.url=url
         self.publishedAt=publishedAt
+#modl10newuser58
