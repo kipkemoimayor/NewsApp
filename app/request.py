@@ -29,16 +29,18 @@ def news(headlines):
 def process_results(news_list):
     news_results=[]
     for news in news_list:
+
         title=news.get("title")
         description=news.get("description")
         urltoImage=news.get("urlToImage")
         content=news.get("content")
         url=news.get("url")
+        if description and urltoImage:
 
-        news_object=News(title,description,urltoImage,content,url)
+            news_object=News(title,description,urltoImage,content,url)
 
-        news_results.append(news_object)
-        news_results=news_results[:6]
+            news_results.append(news_object)
+            news_results=news_results[:6]
     return news_results
 '''
 Getting various sources
