@@ -36,5 +36,8 @@ h2{
 }
 .art{
   text-align: center;
-  color: #8436;
+  color: white;
+}
+.jumbo{
+  background-color: #588985 !important;
 }
