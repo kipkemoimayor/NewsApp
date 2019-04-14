@@ -44,3 +44,17 @@ h2{
 body{
   background-color: #FBFCF9;
 }
+#error{
+  background-color: black;
+}
+@media screen  and (min-width:800px) {
+  #message{
+    position: absolute;
+    top: 150px;
+    left: 400px;
+
+  }
+}
+span{
+  color: red;
+}

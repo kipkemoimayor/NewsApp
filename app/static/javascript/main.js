@@ -4,4 +4,10 @@ $(document).ready(function(){
     return false;
 
   })
+  var typed=new Typed("#type",{
+     strings:["This is not the page you were lookig for if you think its a problem please contact us.."],
+     backSpeed:70,
+     typeSpeed:80,
+     smartBackspace:true,
+   })
 })
