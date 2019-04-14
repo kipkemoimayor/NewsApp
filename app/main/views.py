@@ -8,7 +8,7 @@ def index():
     source=sources("sources")
     return render_template("index.html",top_headline=top_news,sources=source)
 
-@main.route("/body/<name>")
+@main.route("/articles/<name>")
 def body(name):
     article=get_sources(name)
     bbc=get_articles("bbc-news")
@@ -16,4 +16,4 @@ def body(name):
     aljezera=get_articles("al-jazeera-english")
     technica=get_articles("ars-technica")
 
-    return render_template("body.html",name=name,bbc_news=bbc,article=article,abc_news=abc,aljezera_n=aljezera,tech=technica)
+    return render_template("articles.html",name=name,bbc_news=bbc,article=article,abc_news=abc,aljezera_n=aljezera,tech=technica)
