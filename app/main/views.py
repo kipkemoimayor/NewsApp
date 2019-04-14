@@ -1,6 +1,6 @@
 from flask import render_template
 from . import main
-from ..request import news,sources
+from ..request import news,sources,get_articles,get_sources
 @main.route("/")
 def index():
     top_news=news("top-headlines")
@@ -8,6 +8,12 @@ def index():
     source=sources("sources")
     return render_template("index.html",top_headline=top_news,sources=source)
 
-@main.route("/body/<id>")
-def body(id):
-    return render_template("body.html")
+@main.route("/body/<name>")
+def body(name):
+    article=get_sources(name)
+    bbc=get_articles("bbc-news")
+    abc=get_articles("abc-news-au")
+    aljezera=get_articles("al-jazeera-english")
+    technica=get_articles("ars-technica")
+
+    return render_template("body.html",name=name,bbc_news=bbc,article=article,abc_news=abc,aljezera_n=aljezera,tech=technica)

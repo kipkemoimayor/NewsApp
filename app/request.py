@@ -1,15 +1,17 @@
 import urllib.request,json
-from .models import News,Sources
+from .models import News,Sources,Articles
 
 api_key=None
 base_url=None
 source_url=None
+article_url=None
 
 def configure_request(app):
-    global api_key,base_url,source_url
+    global api_key,base_url,source_url,article_url
     api_key=app.config["NEWS_API_KEY"]
     base_url=app.config["NEWS_API_BASE_URL"]
     source_url=app.config["NEWS_BASE_URL"]
+    article_url=app.config["NEWS_ARTICLE_API"]
 def news(headlines):
     get_news_url=base_url.format(headlines,api_key)
     with urllib.request.urlopen(get_news_url) as url:
@@ -68,22 +70,51 @@ def process_sources(source_list):
 
     return source_results
 
+'''
+Fetching Articles
+'''
+def get_articles(name):
+    get_articles_url=article_url.format(name,api_key)
+    with urllib.request.urlopen(get_articles_url) as url:
+        article_data=url.read()
+        article_response=json.loads(article_data)
+
+        article_object=None;
+
+        if article_response['articles']:
+            at_result_list=article_response["articles"]
+            at_results=process_articles(at_result_list)
+    return at_results
 
 
+def process_articles(article_list):
+    article_results=[]
+    for article in article_list:
+        title=article.get("title")
+        description=article.get("description")
+        url=article.get("url")
+        urlToImage=article.get("urlToImage")
+        publishedAt=article.get("publishedAt")
 
-# def get_sources(category):
-#     get_news_details_url=base_url.format(category,api_key)
-#
-#     with urllib.request.urlopen(get_news_details_url) as url:
-#         news_details_data=url.read();
-#         news_details_response=json.loads(news_details_data)
-#
-#         news_object=None
-#         if news_details_response:
-#             title=news_details_response.get("title")
-#             description=news_details_response.get("description")
-#             urltoImage=news_details_response.get("urlToImage")
-#             content=news_details_response.get("content")
-#
-#             news_object=News(title,description,urltoImage,content)
-#     return news_object
+        article_object=Articles(title,description,urlToImage,publishedAt,url)
+        article_results.append(article_object)
+
+    return article_results
+
+def get_sources(name):
+    get_articles_details_url=article_url.format(name,api_key)
+
+    with urllib.request.urlopen(get_articles_details_url) as url:
+        news_details_data=url.read();
+        news_details_response=json.loads(news_details_data)
+
+        news_object=None
+        if news_details_response:
+            title=news_details_response.get("title")
+            description=news_details_response.get("description")
+            url=news_details_response.get("url")
+            urlToImage=news_details_response.get("urlToImage")
+            publishedAt=news_details_response.get("publishedAt")
+
+            news_object=Articles(title,description,urlToImage,publishedAt,url)
+    return news_object
