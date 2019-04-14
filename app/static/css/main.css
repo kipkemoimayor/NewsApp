@@ -58,3 +58,12 @@ body{
 span{
   color: red;
 }
+.top{
+  background-image: url("../images/bg.svg");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-weight: 400;
+  background-color: rgba(0,0,0,0.6);
+}
