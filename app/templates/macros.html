@@ -11,7 +11,7 @@
       </div>
       <img src="{{top_news.urlToImage}}" alt="" class="img-responsive">
       <div class="card-body">
-          {{top_news.description |truncate(100) }} <br><a class="btn btn-outline-info" target="_blank" href="{{top_news.url}}">Continue R..</a>
+          {{top_news.description |truncate(150) }} <br><a class="btn btn-outline-info" target="_blank" href="{{top_news.url}}">Continue R..</a>
       </div>
 
     </div>
@@ -23,9 +23,32 @@
 
   </div>
 
-
-
-
     {%endfor%}
       </div>
+
+
+
+{%endmacro%}
+{%macro  displaySources(source_list)%}
+{%for source in source_list%}
+<div class="col-md-3">
+  <!-- Card -->
+  <div class="card card-image" style="background-image: url();">
+
+    <!-- Content -->
+    <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+      <div>
+        <h3 class="card-title pt-2"><strong>{{source.name}}</strong></h3>
+        <p>{{source.description}}</p>
+        <a href="/body/{{source.id}}" class="btn btn-pink"><i class="fas fa-clone left"></i>See articles</a>
+      </div>
+    </div>
+
+  </div>
+  <!-- Card -->
+
+  </div>
+
+{%endfor%}
+
 {%endmacro%}
