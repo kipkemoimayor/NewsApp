@@ -9,7 +9,7 @@ This application gives the user  ability to view news headlines from different s
 * Python3.6 or later is installed in your PC.
 * clone the directory into your local machine
 * navigate to the cloned folder by `cd NewsApp`
-* pip install requirements.txt
+* pip install `requirements.txt`
 * run this command on terminal `chmod +x start.sh`
 * run `./start.py`
 * The application should work
