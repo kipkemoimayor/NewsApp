@@ -1,5 +1,5 @@
 import unittest
-from . import Articles
+from app.models import Articles
 
 
 class TestArtical(unittest.TestCase):
@@ -11,7 +11,7 @@ class TestArtical(unittest.TestCase):
         self.new_article=Articles("kenyan gazette","I was established in the year  1954","https://newsapi.org/v2/sources","https://newsapi/img.png","25-10-2019")
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.new_news,Articles))
+        self.assertTrue(isinstance(self.new_article,Articles))
 
     '''
     Test our  News movie if it is initialized correctly
