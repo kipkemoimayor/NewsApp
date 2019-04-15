@@ -10,4 +10,5 @@ $(document).ready(function(){
      typeSpeed:80,
      smartBackspace:true,
    })
+
 })
